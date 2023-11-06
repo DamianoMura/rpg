@@ -1,3 +1,11 @@
+<!-- Team Management -->
+@if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+<div class="border-t border-gray-200 dark:border-gray-600"></div>
+
+<div class="block px-4 py-2 text-xs text-gray-400">
+    {{ __('Manage Team') }}
+</div>
+
 <!-- Team Settings -->
 <x-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
     {{ __('Team Settings') }}
@@ -20,4 +28,5 @@
     @foreach (Auth::user()->allTeams() as $team)
         <x-switchable-team :team="$team" component="responsive-nav-link" />
     @endforeach
+@endif
 @endif

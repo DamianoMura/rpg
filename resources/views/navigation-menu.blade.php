@@ -19,7 +19,7 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <!-- Teams Dropdown -->
+               
                 @role('DEV')
                     <x-teams-dropdown-button />
                 @endrole
@@ -134,17 +134,9 @@
                     </x-responsive-nav-link>
                 </form>
 
-                <!-- Team Management -->
-                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                    <div class="border-t border-gray-200 dark:border-gray-600"></div>
-
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Manage Team') }}
-                    </div>
-                    @role(3)
-                    <x-team-dropdown-settings />
-                    @endrole
-                @endif
+                @role('DEV')
+                <x-team-dropdown-settings />
+                @endrole
             </div>
         </div>
     </div>
