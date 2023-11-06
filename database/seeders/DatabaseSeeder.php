@@ -54,17 +54,12 @@ class DatabaseSeeder extends Seeder
         ]);
         //user User creation
         \App\Models\User::factory()->create([
-            'name' => 'Dev',
+            'name' => 'demianz',
             'email' => 'user@rpg.game',
             'password' => Bcrypt('administrator'),
             'current_team_id' => 1,
         ]);
-        //user Team creation
-        \App\Models\Team::factory()->create([
-            'name' => 'Developer',
-            'user_id' => 1,
-            'personal_team' => true,
-        ]);
+       
         //user Role creation
         $role=\App\Models\Role::create([
             'name' => 'User',
