@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'demianz',
             'email' => 'user@rpg.game',
             'password' => Bcrypt('administrator'),
-            'current_team_id' => 1,
+            'current_team_id' => 3,
         ]);
        
         //user Role creation
