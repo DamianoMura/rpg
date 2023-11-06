@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
         //user User creation
         \App\Models\User::factory()->create([
             'name' => 'Dev',
-            'email' => 'admin@rpg.game',
+            'email' => 'user@rpg.game',
             'password' => Bcrypt('administrator'),
             'current_team_id' => 1,
         ]);
