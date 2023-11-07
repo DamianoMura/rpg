@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Shanmuga\LaravelEntrust\Models\EntrustRole;
 
 
 class DatabaseSeeder extends Seeder
@@ -70,7 +71,51 @@ class DatabaseSeeder extends Seeder
             $user=\App\Models\User::find($x+1);
             $user->attachRole($x+1);
         }
+        //user management permissions
+        $permission=\App\Models\Permission::create([
+            'name' => 'user_create',
+            'display_name' => 'User Create',
+            'description' => 'enables the ability to create new users',
+        ]);
         
         
+        $permission=\App\Models\Permission::create([
+            'name' => 'user_update',
+            'display_name' => 'User update',
+            'description' => 'enables the ability to update users',
+        ]);
+        
+        $permission=\App\Models\Permission::create([
+            'name' => 'user_delete',
+            'display_name' => 'team delete',
+            'description' => 'enables the ability to delete users',
+        ]);
+        
+        $permission=\App\Models\Permission::create([
+            'name' => 'team_create',
+            'display_name' => 'team Create',
+            'description' => 'enables the ability to create new teams',
+        ]);
+      
+        $permission=\App\Models\Permission::create([
+            'name' => 'team_update',
+            'display_name' => 'team update',
+            'description' => 'enables the ability to update teams',
+        ]);
+        
+        $permission=\App\Models\Permission::create([
+            'name' => 'team_delete',
+            'display_name' => 'team delete',
+            'description' => 'enables the ability to delete teams',
+        ]);
+       
+        $role=\App\Models\Permission::create([
+            'name' => 'manage_team_members',
+            'display_name' => 'manage team members',
+            'description' => 'enables the ability to add or delete team members',
+        ]);
+    //finds and gives all permissions to DEV role  
+        $role=\App\Models\Role::find(1)->permissions()->sync(\App\Models\Permission::all());
+       
     }
 }

@@ -20,12 +20,10 @@
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                
-                @role('DEV')
-                    <x-dev-teams-dropdown-button />
-                @endrole
-                @role('Admin')
+                
                     <x-teams-dropdown-button />
-                @endrole
+               
+              
 
                 <!-- Settings Dropdown -->
                 <div class="ms-3 relative">
@@ -137,12 +135,12 @@
                     </x-responsive-nav-link>
                 </form>
 
-                @role('DEV')
-                <x-dev-teams-dropdown-settings />
-                @endrole
-                @role('Admin')
+             
+                
+             
+                
                     <x-teams-dropdown-settings />
-                @endrole
+                
             </div>
         </div>
     </div>

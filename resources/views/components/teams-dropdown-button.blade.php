@@ -1,3 +1,4 @@
+ 
  <!-- Teams Dropdown -->
  @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
 <div class="ms-3 relative">
